@@ -1,0 +1,145 @@
+.exit-buttons {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	gap: 70px;
+}
+
+.exit-btn {
+	background: rgba(255,255,255,0.3);
+	border: none;
+	border-radius: 20px;
+	padding: 15px 40px;
+	font-size: 20px;
+	color: #fff;
+	text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: background 0.2s;
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.exit-btn:hover {
+	background: rgba(255,255,255,0.5);
+}
+
+.exit-btn.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	background: rgba(255,255,255,0.2);
+}
+
+.close-btn, .settings-btn {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border: none;
+	z-index: 2;
+}
+
+.close-btn {
+	position: absolute;
+	top: 40px;
+	left: 40px;
+}
+
+.close-btn:hover, .settings-btn:hover {
+	background: rgba(135,206,250,0.3);
+	box-shadow: none;
+}
+
+.close-btn img {
+	width: 20px;
+	height: 20px;
+}
+
+.settings-btn img {
+	transition: transform 0.3s ease;
+	width: 30px;
+	height: 30px;
+}
+
+.settings-btn.rotated img {
+	transform: rotate(90deg);
+}
+
+.settings-btn.rotated {
+	background-color: #0A84FF;
+	box-shadow: 0px 0px 20px #0A84FF;
+}
+
+#back-to-menu-btn {
+	background-color: rgba(255, 255, 255, 0.3);
+	color: #fff;
+	font-size: 24px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#auth-btns button {
+	border: 1px solid rgba(255,255,255,0.4);
+	background: rgba(128, 128, 128, 0.3);
+	backdrop-filter: blur(10px);
+	color: #fff;
+	border-radius: 20px;
+	padding: 30px 60px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	top: 60%;
+	left: 42.8%;
+	position: absolute;
+}
+
+#auth-btns button:hover,
+.tournament-card-content-begin button:hover,
+.tournament-card-content-setup button:hover,
+#start-tournament-btn:hover {
+	background: rgba(135,206,250,0.3);
+	box-shadow: none;
+	border: none;
+}
+
+#auth-btns button:active,
+.tournament-card-content-begin button:active,
+.tournament-card-content-setup button:active,
+#start-tournament-btn:active {
+	background: #0A84FF;
+	border: none;
+}
+
+.tournament-card-content-begin button,
+.tournament-card-content-setup button {
+	border: 1px solid rgba(255,255,255,0.4);
+	background: rgba(255,255,255,0.3);
+	backdrop-filter: blur(10px);
+	color: #fff;
+	border-radius: 25px;
+	padding: 25px 50px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 50px;
+}
+
+#start-tournament-btn {
+	border: 1px solid rgba(255,255,255,0.4);
+	background: rgba(255,255,255,0.3);
+	backdrop-filter: blur(10px);
+	color: #fff;
+	border-radius: 25px;
+	padding: 25px 50px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 20px;
+}

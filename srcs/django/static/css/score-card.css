@@ -1,0 +1,79 @@
+.score-card {
+	position: absolute;
+	left: 895px;
+	top: 140px;
+	width: 950px;
+	height: 120px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+  
+.settings-btn {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.player-pic-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.score-display {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 60px;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.player-label {
+	font-size: 24px;
+}
+
+.exit-buttons {
+	margin-left: auto;
+}
+
+.player-pic-container {
+	position: static;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+	background: rgba(255,255,255,0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.player-pic-container.opponent {
+	margin-left: 0px;
+}
+
+#current-player-score,
+#opponent-score,
+.score-separator {
+	position: static;
+	left: auto;
+	margin: 0;
+}
+
+.score-card.settings-active .exit-buttons {
+	display: flex;
+}
+
+.score-card.settings-active .player-pic-container,
+.score-card.settings-active .score-display {
+	display: none;
+}

@@ -1,0 +1,54 @@
+.themes-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: start;
+	gap: 40px 0px;
+	margin-top: 50px;
+	padding: 0 50px 40px 50px;
+	box-sizing: border-box;
+}
+
+.theme-option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	text-align: center;
+}
+
+.theme-option img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	transition: transform 0.3s ease;
+}
+
+.theme-option span {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #fff;
+	transition: transform 0.3s ease;
+}
+
+.theme-option:hover img,
+.theme-option:hover span {
+	transform: scale(1.1);
+}
+
+.theme-option.selected img {
+	transform: scale(1.1);
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(221, 221, 221, 0.341);
+	border-radius: 100px;
+}
+
+.theme-option.selected span {
+	transform: scale(1.2);
+	font-weight: bold;
+	color: #fff;
+	margin-top: 30px;
+}

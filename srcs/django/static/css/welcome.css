@@ -1,0 +1,20 @@
+.title-w {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	font-size: 48px;
+	margin: 0;
+	color: #fff;
+	text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text {
+	font-size: 96px;
+	margin-top: 20px;
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	top: 40%;
+	left: 29%;
+	text-align: center;
+}

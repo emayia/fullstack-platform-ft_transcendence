@@ -1,0 +1,60 @@
+.languages-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: start;
+    gap: 40px 0px;
+	padding: 0 50px 40px 50px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.languages-card-content .language-option {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.languages-card-content .language-option img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+.languages-card-content .language-option p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.languages-card-content .language-option:hover img,
+.languages-card-content .language-option:hover p {
+    transform: scale(1.12);
+}
+
+.languages-card-content .language-option.selected img {
+    transform: scale(1.12);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(221, 221, 221, 0.341);
+    border-radius: 100px;
+}
+
+.languages-card-content .language-option.selected p {
+    transform: scale(1.2);
+    font-weight: bold;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.languages-card-content .card-title {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}

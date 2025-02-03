@@ -1,0 +1,90 @@
+services:
+  postgres:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    secrets:
+      - postgres_password
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD_FILE: ${POSTGRES_PASSWORD_FILE}
+    ports:
+      - "5432:5432"
+    networks:
+        - transcendence
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  django:
+    container_name: django
+    build:
+      context: ./django
+    volumes:
+      - django_static:/app/staticfiles
+    expose:
+      - "8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ./.env
+    secrets:
+      - postgres_password
+      - client_id
+      - client_secret
+      - django_secret_key
+      - jwt_signing_key
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_PASSWORD_FILE: ${POSTGRES_PASSWORD_FILE}
+      DATABASE_URL: ${DATABASE_URL}
+      REDIRECT_URI: ${REDIRECT_URI}
+      DJANGO_SETTINGS_MODULE: transcendence.settings
+      DJANGO_SECRET_KEY_FILE: ${DJANGO_SECRET_KEY_FILE}
+      JWT_SIGNING_KEY_FILE: ${JWT_SIGNING_KEY_FILE}
+    networks:
+      - transcendence
+    command: daphne -b 0.0.0.0 -p 8000 transcendence.asgi:application
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    volumes:
+      - django_static:/app/staticfiles:ro
+    ports:
+      - "8443:443"
+    depends_on:
+      - django
+    networks:
+      - transcendence
+
+secrets:
+  postgres_password:
+    file: ../secrets/postgres_password.txt
+  client_id:
+    file: ../secrets/client_id.txt
+  client_secret:
+    file: ../secrets/client_secret.txt
+  django_secret_key:
+    file: ../secrets/django_secret_key.txt
+  jwt_signing_key:
+    file: ../secrets/jwt_signing_key.txt
+
+volumes:
+  postgres_data:
+  django_static:
+
+networks:
+  transcendence:
+    driver: bridge
+    

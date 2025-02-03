@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 10:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: transcendence/templates/index.html:10 transcendence/templates/index.html:124
+msgid "Pong"
+msgstr "퐁"
+
+#: transcendence/templates/index.html:45
+msgid "Log in with 42"
+msgstr "42로 로그인"
+
+#: transcendence/templates/index.html:46
+msgid "Profile"
+msgstr "프로필"
+
+#: transcendence/templates/index.html:47
+msgid "Logout"
+msgstr "로그아웃"
+
+#: transcendence/templates/index.html:48
+msgid "Player Infos"
+msgstr "플레이어 정보"
+
+#: transcendence/templates/index.html:49
+msgid "Send Message"
+msgstr "메시지 보내기"
+
+#: transcendence/templates/index.html:50
+msgid "Block User"
+msgstr "사용자 차단"
+
+#: transcendence/templates/index.html:51
+msgid "Unblock User"
+msgstr "사용자 차단 해제"
+
+#: transcendence/templates/index.html:52
+msgid "Players"
+msgstr "플레이어들"
+
+#: transcendence/templates/index.html:53
+msgid "No players available yet"
+msgstr "아직 플레이어가 없습니다"
+
+#: transcendence/templates/index.html:54
+msgid "Chat box is empty"
+msgstr "채팅 상자가 비어 있습니다"
+
+#: transcendence/templates/index.html:55
+msgid "Type a message..."
+msgstr "메시지를 입력하세요..."
+
+#: transcendence/templates/index.html:56
+msgid "Send"
+msgstr "보내기"
+
+#: transcendence/templates/index.html:57
+msgid "Messages"
+msgstr "메시지"
+
+#: transcendence/templates/index.html:58
+msgid "No messages yet"
+msgstr "아직 메시지가 없습니다"
+
+#: transcendence/templates/index.html:59
+msgid "Tournament"
+msgstr "토너먼트"
+
+#: transcendence/templates/index.html:60
+msgid "Tournament Setup"
+msgstr "토너먼트 설정"
+
+#: transcendence/templates/index.html:61
+msgid "Number of participants (3 to 6):"
+msgstr "참여자 수 (3명에서 6명까지):"
+
+#: transcendence/templates/index.html:62
+msgid "Set Aliases"
+msgstr "별명 설정"
+
+#: transcendence/templates/index.html:63
+msgid "Enter aliases (alphabetical only, up to 10 chars):"
+msgstr "별명을 입력하세요 (알파벳만, 최대 10자):"
+
+#: transcendence/templates/index.html:64
+msgid "Start tournament"
+msgstr "토너먼트 시작"
+
+#: transcendence/templates/index.html:65
+msgid "Start a new tournament"
+msgstr "새 토너먼트 시작"
+
+#: transcendence/templates/index.html:66
+msgid "No ongoing tournament"
+msgstr "진행 중인 토너먼트가 없습니다"
+
+#: transcendence/templates/index.html:67
+msgid "Ongoing tournament"
+msgstr "진행 중인 토너먼트"
+
+#: transcendence/templates/index.html:68
+msgid "Alias"
+msgstr "별명"
+
+#: transcendence/templates/index.html:69
+msgid "Wins"
+msgstr "승리"
+
+#: transcendence/templates/index.html:70
+msgid "First to 5 wins is the champion!"
+msgstr "5승 먼저 달성한 사람이 챔피언입니다!"
+
+#: transcendence/templates/index.html:71
+msgid "Continue"
+msgstr "계속"
+
+#: transcendence/templates/index.html:72
+msgid "Player"
+msgstr "플레이어"
+
+#: transcendence/templates/index.html:73
+msgid "Up to 10 letters"
+msgstr "최대 10자"
+
+#: transcendence/templates/index.html:74
+msgid "There was an error starting the game. Please try again."
+msgstr "게임 시작 중 오류가 발생했습니다. 다시 시도해 주세요."
+
+#: transcendence/templates/index.html:75
+msgid ""
+"Cannot setup tournament while a game is in progress. Please finish or exit "
+"your current game first."
+msgstr ""
+"게임이 진행 중일 때는 토너먼트를 설정할 수 없습니다. 현재 게임을 종료하거나 "
+"마무리하세요."
+
+#: transcendence/templates/index.html:76
+msgid "Invalid number of participants. Please choose between 3 and 6."
+msgstr "잘못된 참여자 수입니다. 3명에서 6명 사이로 선택하세요."
+
+#: transcendence/templates/index.html:77
+msgid "Cannot start tournament while a game is in progress."
+msgstr "게임이 진행 중일 때는 토너먼트를 시작할 수 없습니다."
+
+#: transcendence/templates/index.html:78
+msgid ""
+"No more valid contenders in the queue, the current champion is the winner by "
+"default."
+msgstr ""
+"대기 중인 유효한 참가자가 더 이상 없으므로, 현재 챔피언이 기본적으로 승자가 "
+"됩니다."
+
+#: transcendence/templates/index.html:79
+msgid "Alias is invalid. Use letters only."
+msgstr "별명이 유효하지 않습니다. 문자만 사용하세요."
+
+#: transcendence/templates/index.html:80
+msgid "Duplicate alias detected. Each player must have a unique alias."
+msgstr ""
+"중복된 별명이 감지되었습니다. 각 플레이어는 고유한 별명을 사용해야 합니다."
+
+#: transcendence/templates/index.html:81
+msgid "Themes"
+msgstr "테마"
+
+#: transcendence/templates/index.html:82
+msgid "Clouds"
+msgstr "구름"
+
+#: transcendence/templates/index.html:83
+msgid "Sunset"
+msgstr "일몰"
+
+#: transcendence/templates/index.html:84
+msgid "Cherry Blossom"
+msgstr "벚꽃"
+
+#: transcendence/templates/index.html:85
+msgid "Nature"
+msgstr "자연"
+
+#: transcendence/templates/index.html:86
+msgid "Galaxy"
+msgstr "은하"
+
+#: transcendence/templates/index.html:87
+msgid "Fire"
+msgstr "불"
+
+#: transcendence/templates/index.html:88
+msgid "Languages"
+msgstr "언어"
+
+#: transcendence/templates/index.html:89
+msgid "You cannot send a message to this user because they blocked you."
+msgstr "이 사용자가 당신을 차단했기 때문에 메시지를 보낼 수 없습니다."
+
+#: transcendence/templates/index.html:90
+msgid "You cannot send a message to this user because you blocked them."
+msgstr "당신이 이 사용자를 차단했기 때문에 메시지를 보낼 수 없습니다."
+
+#: transcendence/templates/index.html:91
+msgid "won!"
+msgstr "님이 승리했습니다!"
+
+#: transcendence/templates/index.html:92
+msgid "You won!"
+msgstr "당신이 승리했습니다!"
+
+#: transcendence/templates/index.html:93
+msgid "The AI has won!"
+msgstr "AI가 승리했습니다!"
+
+#: transcendence/templates/index.html:94
+msgid "P1 won!"
+msgstr "P1님이 승리했습니다!"
+
+#: transcendence/templates/index.html:95
+msgid "P2 won!"
+msgstr "P2님이 승리했습니다!"
+
+#: transcendence/templates/index.html:96
+msgid "Next game:"
+msgstr "다음 게임:"
+
+#: transcendence/templates/index.html:97
+msgid "vs"
+msgstr "대"
+
+#: transcendence/templates/index.html:98
+msgid "Start new game"
+msgstr "새 게임 시작"
+
+#: transcendence/templates/index.html:99
+msgid "Tournament champion:"
+msgstr "토너먼트 챔피언:"
+
+#: transcendence/templates/index.html:100
+msgid "Return to Menu"
+msgstr "메뉴로 돌아가기"
+
+#: transcendence/templates/index.html:101
+msgid "Paused"
+msgstr "일시 중지됨"
+
+#: transcendence/templates/index.html:118
+msgid "Welcome to Pong."
+msgstr "퐁에 오신 것을 환영합니다."
+
+#: transcendence/templates/index.html:154
+msgid "Exit game"
+msgstr "게임 종료"
+
+#: transcendence/templates/index.html:155
+msgid "Exit tournament"
+msgstr "토너먼트 종료"
+
+#: transcendence/templates/index.html:171
+msgid "Game mode"
+msgstr "게임 모드"
+
+#: transcendence/templates/index.html:177
+msgid "Single player"
+msgstr "싱글 플레이어"
+
+#: transcendence/templates/index.html:178
+msgid "Play against our AI"
+msgstr "우리 AI와 대결"
+
+#: transcendence/templates/index.html:189
+msgid "Local game"
+msgstr "로컬 게임"
+
+#: transcendence/templates/index.html:190
+msgid "1v1 on your computer"
+msgstr "컴퓨터에서 1대1 게임"
+
+#: transcendence/templates/index.html:207
+msgid "Back to game menu"
+msgstr "게임 메뉴로 돌아가기"

@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 10:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: transcendence/templates/index.html:10 transcendence/templates/index.html:124
+msgid "Pong"
+msgstr "Понг"
+
+#: transcendence/templates/index.html:45
+msgid "Log in with 42"
+msgstr "Войти через 42"
+
+#: transcendence/templates/index.html:46
+msgid "Profile"
+msgstr "Профиль"
+
+#: transcendence/templates/index.html:47
+msgid "Logout"
+msgstr "Выйти"
+
+#: transcendence/templates/index.html:48
+msgid "Player Infos"
+msgstr "Информация о игроке"
+
+#: transcendence/templates/index.html:49
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: transcendence/templates/index.html:50
+msgid "Block User"
+msgstr "Заблокировать пользователя"
+
+#: transcendence/templates/index.html:51
+msgid "Unblock User"
+msgstr "Разблокировать пользователя"
+
+#: transcendence/templates/index.html:52
+msgid "Players"
+msgstr "Игроки"
+
+#: transcendence/templates/index.html:53
+msgid "No players available yet"
+msgstr "Игроки еще не доступны"
+
+#: transcendence/templates/index.html:54
+msgid "Chat box is empty"
+msgstr "Чат пуст"
+
+#: transcendence/templates/index.html:55
+msgid "Type a message..."
+msgstr "Введите сообщение..."
+
+#: transcendence/templates/index.html:56
+msgid "Send"
+msgstr "Отправить"
+
+#: transcendence/templates/index.html:57
+msgid "Messages"
+msgstr "Сообщения"
+
+#: transcendence/templates/index.html:58
+msgid "No messages yet"
+msgstr "Сообщений пока нет"
+
+#: transcendence/templates/index.html:59
+msgid "Tournament"
+msgstr "Турнир"
+
+#: transcendence/templates/index.html:60
+msgid "Tournament Setup"
+msgstr "Настройка турнира"
+
+#: transcendence/templates/index.html:61
+msgid "Number of participants (3 to 6):"
+msgstr "Количество участников (от 3 до 6):"
+
+#: transcendence/templates/index.html:62
+msgid "Set Aliases"
+msgstr "Установить псевдонимы"
+
+#: transcendence/templates/index.html:63
+msgid "Enter aliases (alphabetical only, up to 10 chars):"
+msgstr "Введите псевдонимы (только буквы, до 10 символов):"
+
+#: transcendence/templates/index.html:64
+msgid "Start tournament"
+msgstr "Начать турнир"
+
+#: transcendence/templates/index.html:65
+msgid "Start a new tournament"
+msgstr "Начать новый турнир"
+
+#: transcendence/templates/index.html:66
+msgid "No ongoing tournament"
+msgstr "Турнир не проводится"
+
+#: transcendence/templates/index.html:67
+msgid "Ongoing tournament"
+msgstr "Идет турнир"
+
+#: transcendence/templates/index.html:68
+msgid "Alias"
+msgstr "Псевдоним"
+
+#: transcendence/templates/index.html:69
+msgid "Wins"
+msgstr "Победы"
+
+#: transcendence/templates/index.html:70
+msgid "First to 5 wins is the champion!"
+msgstr "Первый до 5 побед — чемпион!"
+
+#: transcendence/templates/index.html:71
+msgid "Continue"
+msgstr "Продолжить"
+
+#: transcendence/templates/index.html:72
+msgid "Player"
+msgstr "Игрок"
+
+#: transcendence/templates/index.html:73
+msgid "Up to 10 letters"
+msgstr "До 10 букв"
+
+#: transcendence/templates/index.html:74
+msgid "There was an error starting the game. Please try again."
+msgstr "Произошла ошибка при запуске игры. Попробуйте еще раз."
+
+#: transcendence/templates/index.html:75
+msgid ""
+"Cannot setup tournament while a game is in progress. Please finish or exit "
+"your current game first."
+msgstr ""
+"Невозможно настроить турнир, пока идет игра. Пожалуйста, завершите или "
+"выйдите из текущей игры."
+
+#: transcendence/templates/index.html:76
+msgid "Invalid number of participants. Please choose between 3 and 6."
+msgstr "Неверное количество участников. Пожалуйста, выберите от 3 до 6."
+
+#: transcendence/templates/index.html:77
+msgid "Cannot start tournament while a game is in progress."
+msgstr "Невозможно начать турнир, пока идет игра."
+
+#: transcendence/templates/index.html:78
+msgid ""
+"No more valid contenders in the queue, the current champion is the winner by "
+"default."
+msgstr ""
+"Нет больше подходящих участников в очереди, текущий чемпион выигрывает по "
+"умолчанию."
+
+#: transcendence/templates/index.html:79
+msgid "Alias is invalid. Use letters only."
+msgstr "Псевдоним недействителен. Используйте только буквы."
+
+#: transcendence/templates/index.html:80
+msgid "Duplicate alias detected. Each player must have a unique alias."
+msgstr ""
+"Обнаружен дублирующийся псевдоним. У каждого игрока должен быть уникальный "
+"псевдоним."
+
+#: transcendence/templates/index.html:81
+msgid "Themes"
+msgstr "Темы"
+
+#: transcendence/templates/index.html:82
+msgid "Clouds"
+msgstr "Облака"
+
+#: transcendence/templates/index.html:83
+msgid "Sunset"
+msgstr "Закат"
+
+#: transcendence/templates/index.html:84
+msgid "Cherry Blossom"
+msgstr "Цветение вишни"
+
+#: transcendence/templates/index.html:85
+msgid "Nature"
+msgstr "Природа"
+
+#: transcendence/templates/index.html:86
+msgid "Galaxy"
+msgstr "Галактика"
+
+#: transcendence/templates/index.html:87
+msgid "Fire"
+msgstr "Огонь"
+
+#: transcendence/templates/index.html:88
+msgid "Languages"
+msgstr "Языки"
+
+#: transcendence/templates/index.html:89
+msgid "You cannot send a message to this user because they blocked you."
+msgstr ""
+"Вы не можете отправить сообщение этому пользователю, потому что он вас "
+"заблокировал."
+
+#: transcendence/templates/index.html:90
+msgid "You cannot send a message to this user because you blocked them."
+msgstr ""
+"Вы не можете отправить сообщение этому пользователю, потому что вы его "
+"заблокировали."
+
+#: transcendence/templates/index.html:91
+msgid "won!"
+msgstr "победил!"
+
+#: transcendence/templates/index.html:92
+msgid "You won!"
+msgstr "Вы победили!"
+
+#: transcendence/templates/index.html:93
+msgid "The AI has won!"
+msgstr "Искусственный интеллект победил!"
+
+#: transcendence/templates/index.html:94
+msgid "P1 won!"
+msgstr "P1 победил!"
+
+#: transcendence/templates/index.html:95
+msgid "P2 won!"
+msgstr "P2 победил!"
+
+#: transcendence/templates/index.html:96
+msgid "Next game:"
+msgstr "Следующий матч:"
+
+#: transcendence/templates/index.html:97
+msgid "vs"
+msgstr "против"
+
+#: transcendence/templates/index.html:98
+msgid "Start new game"
+msgstr "Начать новую игру"
+
+#: transcendence/templates/index.html:99
+msgid "Tournament champion:"
+msgstr "Чемпион турнира:"
+
+#: transcendence/templates/index.html:100
+msgid "Return to Menu"
+msgstr "Вернуться в меню"
+
+#: transcendence/templates/index.html:101
+msgid "Paused"
+msgstr "Пауза"
+
+#: transcendence/templates/index.html:118
+msgid "Welcome to Pong."
+msgstr "Добро пожаловать в Понг."
+
+#: transcendence/templates/index.html:154
+msgid "Exit game"
+msgstr "Выйти из игры"
+
+#: transcendence/templates/index.html:155
+msgid "Exit tournament"
+msgstr "Выйти из турнира"
+
+#: transcendence/templates/index.html:171
+msgid "Game mode"
+msgstr "Режим игры"
+
+#: transcendence/templates/index.html:177
+msgid "Single player"
+msgstr "Одиночная игра"
+
+#: transcendence/templates/index.html:178
+msgid "Play against our AI"
+msgstr "Играйте против нашего ИИ"
+
+#: transcendence/templates/index.html:189
+msgid "Local game"
+msgstr "Локальная игра"
+
+#: transcendence/templates/index.html:190
+msgid "1v1 on your computer"
+msgstr "1v1 на вашем компьютере"
+
+#: transcendence/templates/index.html:207
+msgid "Back to game menu"
+msgstr "Вернуться в меню игры"

@@ -1,0 +1,8 @@
+Django>=4.0,<5.0
+daphne==4.0.0
+psycopg2-binary
+djangorestframework
+djangorestframework-simplejwt
+requests
+channels
+whitenoise

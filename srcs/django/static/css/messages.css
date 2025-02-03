@@ -1,0 +1,92 @@
+#empty-chat-box {
+	color: white;
+	font-size: 60px;
+	opacity: 0.5;
+	font-weight: bolder;
+	text-align: center;
+	padding: 0 30px;
+	margin: 150px 120px;
+}
+
+#conversation-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#conversation-list li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    margin-left: 35px;
+    margin-right: 50px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+    position: relative;
+}
+
+#conversation-list li:last-child {
+    border-bottom: none;
+}
+
+#conversation-list .profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#conversation-list .conversation-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+#conversation-list .conversation-username {
+    margin: 0;
+    color: white;
+    opacity: 0.9;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#conversation-list .conversation-preview {
+    margin: 0;
+    color: white;
+    opacity: 0.8;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#conversation-list button {
+    display: none;
+}
+
+#conversation-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+#conversation-list li.unread {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#conversation-list li.unread::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+}
+
+#conversation-list li.unread .conversation-preview {
+    font-weight: bold;
+    opacity: 1;
+    color: white;
+}

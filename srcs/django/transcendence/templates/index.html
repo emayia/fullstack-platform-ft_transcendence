@@ -1,0 +1,244 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-transitions">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1920, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token }}">
+	<title>{% trans "Pong" %}</title>
+	
+	<!-- Inter font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	
+	<link rel="icon" href="{% static 'assets/icons/favicon.png' %}" type="image/x-icon">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+
+<body>
+	<div class="outer-wrapper">
+		<div class="scaling-wrapper">
+			<div class="base-container centered-layout">
+
+				<!-- Background video -->
+				<video class="bg-video" autoplay muted loop></video>
+				
+				<!-- Welcome Section -->
+				<div id="welcome-section">
+					<h1 class="title-w">Pong.</h1>
+					<p class="welcome-text">{% trans "Welcome to Pong." %}</p>
+					<div id="auth-btns"></div>
+				</div>
+
+				<!-- Main Content -->
+				<div id="main-content" class="hidden">
+					<h1 class="title">{% trans "Pong" %}.</h1>
+					<nav class="navbar">
+						<button class="nav-btn profile">
+							<img src="{% static 'assets/icons/profile.svg' %}" alt="Profile icon">
+						</button>
+						<button class="nav-btn messages">
+							<img src="{% static 'assets/icons/message.svg' %}" alt="Messages icon">
+						</button>
+						<button class="nav-btn players">
+							<img src="{% static 'assets/icons/players.svg' %}" alt="Players icon">
+						</button>
+						<button class="nav-btn tournament">
+							<img src="{% static 'assets/icons/tournament.svg' %}" alt="Tournament icon">
+						</button>
+						<button class="nav-btn languages">
+							<img src="{% static 'assets/icons/languages.svg' %}" alt="Languages icon">
+						</button>
+						<button class="nav-btn themes">
+							<img src="{% static 'assets/icons/themes.svg' %}" alt="Themes icon">
+						</button>
+					</nav>
+
+					<!-- Adaptive card hidden by default -->
+					<div class="adaptive-card hidden"></div>
+					
+					<div class="score-card">
+						<button class="settings-btn">
+							<img src="{% static 'assets/icons/settings.svg' %}" alt="Settings icon">
+						</button>
+						<div class="exit-buttons">
+							<button class="exit-btn exit-game disabled">{% trans "Exit game" %}</button>
+							<button class="exit-btn exit-tournament disabled">{% trans "Exit tournament" %}</button>
+						</div>
+						<div class="score-display">
+							<div class="player-pic-container"></div>
+							<span class="player-label left-label" id="player-label-left"></span>
+							<span class="score-value" id="current-player-score">0</span>
+							<span class="score-separator">-</span>
+							<span class="score-value" id="opponent-score">0</span>
+							<span class="player-label right-label" id="player-label-right"></span>
+							<div class="player-pic-container opponent"></div>
+						</div>
+					</div>
+
+					<!-- Game Card -->
+					<div class="game-card">
+						<div class="game-mode-content">
+							<h2 class="card-title">{% trans "Game mode" %}</h2>
+							<div class="game-mode-option" data-mode="ai">
+								<div class="option-icon">
+									<img src="{% static 'assets/img/img-ai.png' %}" alt="AI icon">
+								</div>
+								<div class="option-text">
+									<h3>{% trans "Single player" %}</h3>
+									<p>{% trans "Play against our AI" %}</p>
+								</div>
+								<div class="option-arrow">
+									<img src="{% static 'assets/icons/arrow-right.svg' %}" alt="Arrow">
+								</div>
+							</div>
+							<div class="game-mode-option" data-mode="local">
+								<div class="option-icon">
+									<img src="{% static 'assets/img/img-local.png' %}" alt="Local icon">
+								</div>
+								<div class="option-text">
+									<h3>{% trans "Local game" %}</h3>
+									<p>{% trans "1v1 on your computer" %}</p>
+								</div>
+								<div class="option-arrow">
+									<img src="{% static 'assets/icons/arrow-right.svg' %}" alt="Arrow">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Pong Canvas -->
+					<!-- Pong Container -->
+					<div id="pong-container" class="hidden">
+						<canvas id="pong" width="900" height="620"></canvas>
+					</div>
+					<div id="victory-screen" class="hidden victory-screen">
+						<img id="winner-pic" class="winner-pic" alt="Winner picture" />
+						<h2 id="winner-msg" class="winner-msg"></h2>
+						<button id="back-to-menu-btn">{% trans "Back to game menu" %}</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--global variables-->
+	<script>
+	
+		const bgBasePath = "{% static 'assets/bg/' %}";
+		const defaultBg = "{% static 'assets/bg/bg-clouds.mp4' %}";
+
+		const langEnImg = "{% static 'assets/img/lang-en.png' %}";
+		const langFrImg = "{% static 'assets/img/lang-fr.png' %}";
+		const langKrImg = "{% static 'assets/img/lang-kr.png' %}";
+		const langRuImg = "{% static 'assets/img/lang-ru.png' %}";
+
+		const closeIcon = "{% static 'assets/icons/close.svg' %}";
+
+		const themeCloudsImg = "{% static 'assets/thumbnails/clouds.png' %}";
+		const themeCherryImg = "{% static 'assets/thumbnails/cherry_blossoms.png' %}";
+		const themeSunsetImg = "{% static 'assets/thumbnails/sunset.png' %}";
+		const themeNatureImg = "{% static 'assets/thumbnails/nature.png' %}";
+		const themeGalaxyImg = "{% static 'assets/thumbnails/galaxy.png' %}";
+		const themeFireImg = "{% static 'assets/thumbnails/fire.png' %}";
+
+		const profilePicDefault = "{% static 'assets/img/default-profile.png' %}";
+		const botOpponentPic = "{% static 'assets/img/bot-img.png' %}";
+
+		const translations = {
+			loginWith42: "{% trans 'Log in with 42' %}",
+			Profile: "{% trans 'Profile' %}",
+			logout: "{% trans 'Logout' %}",
+			playerInfos: "{% trans 'Player Infos' %}",
+			sendMessage: "{% trans 'Send Message' %}",
+			blockUser: "{% trans 'Block User' %}",
+			unblockUser: "{% trans 'Unblock User' %}",
+			Players: "{% trans 'Players' %}",
+			noPlayersAvailable: "{% trans 'No players available yet' %}",
+			emptyChatBox: "{% trans 'Chat box is empty' %}",
+			typeMessage: "{% trans 'Type a message...' %}",
+			Send: "{% trans 'Send' %}",
+			Messages: "{% trans 'Messages' %}",
+			noMessagesYet: "{% trans 'No messages yet' %}",
+			Tournament: "{% trans 'Tournament' %}",
+			tournamentSetup: "{% trans 'Tournament Setup' %}",
+			participantNumber: "{% trans 'Number of participants (3 to 6):' %}",
+			setAliases: "{% trans 'Set Aliases' %}",
+			enterAliases: "{% trans 'Enter aliases (alphabetical only, up to 10 chars):' %}",
+			startTournament: "{% trans 'Start tournament' %}",
+			startNewTournament: "{% trans 'Start a new tournament' %}",
+			noOnGoingTournament: "{% trans 'No ongoing tournament' %}",
+			onGoingTournament: "{% trans 'Ongoing tournament' %}",
+			Alias: "{% trans 'Alias' %}",
+			Wins: "{% trans 'Wins' %}",
+			isChampion: "{% trans 'First to 5 wins is the champion!' %}",
+			Continue: "{% trans 'Continue' %}",
+			Player: "{% trans 'Player' %}",
+			upTo10Letters: "{% trans 'Up to 10 letters' %}",
+			gameStartError: "{% trans 'There was an error starting the game. Please try again.' %}",
+			tournamentSetupError: "{% trans 'Cannot setup tournament while a game is in progress. Please finish or exit your current game first.' %}",
+			invalidParticipantNumber: "{% trans 'Invalid number of participants. Please choose between 3 and 6.' %}",
+			tournamentStartError: "{% trans 'Cannot start tournament while a game is in progress.' %}",
+			defaultWinnerMessage: "{% trans 'No more valid contenders in the queue, the current champion is the winner by default.' %}",
+			invalidAlias: "{% trans 'Alias is invalid. Use letters only.' %}",
+			duplicateAlias: "{% trans 'Duplicate alias detected. Each player must have a unique alias.' %}",
+			Themes: "{% trans 'Themes' %}",
+			Clouds: "{% trans 'Clouds' %}",
+			Sunset: "{% trans 'Sunset' %}",
+			CherryBlossom: "{% trans 'Cherry Blossom' %}",
+			Nature: "{% trans 'Nature' %}",
+			Galaxy: "{% trans 'Galaxy' %}",
+			Fire: "{% trans 'Fire' %}",
+			Languages: "{% trans 'Languages' %}",
+			blockedUserAlert: "{% trans 'You cannot send a message to this user because they blocked you.' %}",
+			blockingUserAlert: "{% trans 'You cannot send a message to this user because you blocked them.' %}",
+			won: "{% trans 'won!' %}",
+			youWon: "{% trans 'You won!' %}",
+			AIWon: "{% trans 'The AI has won!' %}",
+			P1Won: "{% trans 'P1 won!' %}",
+			P2Won: "{% trans 'P2 won!' %}",
+			nextGame: "{% trans 'Next game:' %}",
+			vs: "{% trans 'vs' %}",
+			startNewGame: "{% trans 'Start new game' %}",
+			tournamentChampion: "{% trans 'Tournament champion:' %}",
+			returnToMenu: "{% trans 'Return to Menu' %}",
+			Paused: "{% trans 'Paused' %}",
+		};
+		const notFoundGif = "{% static 'assets/img/404-not_found.gif' %}";
+	</script>
+
+	<!-- Basic Auth & User Management - Must load first -->
+	<script defer src="{% static 'js/secure-fetch.js' %}"></script>
+	<script defer src="{% static 'js/auth.js' %}"></script>
+	<script defer src="{% static 'js/profile.js' %}"></script>
+	<script defer src="{% static 'js/chat.js' %}"></script>
+	<script defer src="{% static 'js/messages.js' %}"></script>
+	<!-- Core Game Files - Loaded in dependency order -->
+	<script defer src="{% static 'js/game-manager.js' %}"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+	<script defer src="{% static 'js/pong.js' %}"></script>
+	<script defer src="{% static 'js/pong3d.js' %}"></script>
+	<script defer src="{% static 'js/game.js' %}"></script>
+
+	<!-- Add Tournament after game.js so it can call window.startNewPongGame(...) -->
+	<script src="{% static 'js/tournament.js' %}"></script>
+	
+	<!-- Feature & UI Modules -->
+	<script src="{% static 'js/player-profile.js' %}"></script>
+	<script src="{% static 'js/players.js' %}"></script>
+	<script src="{% static 'js/languages.js' %}"></script>
+	<script src="{% static 'js/themes.js' %}"></script>
+
+	<!-- Hash routing -->
+	<script src="{% static 'js/hash-router.js' %}"></script>
+
+	<!-- Base UI - Must load last as it uses functions from all other modules -->
+	<script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>

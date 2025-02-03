@@ -1,0 +1,120 @@
+.game-card, canvas {
+	position: absolute;
+	left: 895px;
+	top: 320px;
+	width: 950px;
+	height: 620px;
+	border-radius: 70px;
+	background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(180,180,180,0.3));
+}
+
+.game-mode-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px 40px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.game-mode-content .game-mode-option {
+	cursor: pointer;
+	width: 60%;
+	background: rgba(255,255,255,0.2);
+	border-radius: 40px;
+	display: flex;
+	align-items: center;
+	padding: 20px 30px;
+	margin-bottom: 30px;
+	box-sizing: border-box;
+	transition: background 0.2s;
+}
+
+.game-mode-content .game-mode-option:hover {
+	background: rgba(255,255,255,0.3);
+}
+
+.game-mode-content .option-icon {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	overflow: hidden;
+	margin-right: 20px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game-mode-content .option-icon img {
+	width: 120%;
+	height: 120%;
+	object-fit: cover;
+}
+
+.game-mode-content .option-text {
+	flex: 1;
+	text-align: left;
+}
+
+.game-mode-content .option-text h3 {
+	margin: 0;
+	font-size: 24px;
+	color: #fff;
+	text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-mode-content .option-text p {
+	margin: 5px 0 0;
+	font-size: 16px;
+	color: #fff;
+}
+
+.game-mode-content .option-arrow {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background: rgba(255,255,255,0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+	flex-shrink: 0;
+}
+
+.game-mode-content .option-arrow img {
+	width: 20px;
+	height: 20px;
+}
+
+.victory-screen {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1920px;
+	height: 1080px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 9999;
+}
+
+.winner-pic {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+
+.winner-msg {
+	color: #fff;
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.game-mode-content .card-title {
+	margin-bottom: 60px;
+}

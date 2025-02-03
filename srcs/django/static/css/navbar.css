@@ -1,0 +1,40 @@
+.navbar {
+	position: absolute;
+	left: 75px;
+	top: 140px;
+	width: 80px;
+	height: 800px;
+	position: relative;
+}
+  
+.nav-btn {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(128, 128, 128, 0.3);
+	backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+	transition: background 0.3s ease;
+}
+  
+.nav-btn:hover {
+	background: rgba(135,206,250,0.3);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+  
+.nav-btn.active {
+	background: #0A84FF;
+	border: none;
+	box-shadow: 0px 0px 20px #0A84FF;
+}
+  
+.nav-btn img {
+	width: 40px;
+	height: 40px;
+}
