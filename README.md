@@ -57,8 +57,8 @@ A modern interpretation of the classic Pong game, built with Django, WebSocket, 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/emayia/fullstack-platform-modern-arcade.git
-cd fullstack-platform-modern-arcade
+git clone https://github.com/emayia/fullstack-platform-ft_transcendence.git
+cd fullstack-platform-ft_transcendence
 ```
 
 2. **Set up environment variables**
@@ -97,7 +97,8 @@ The game uses three main WebSocket consumers:
 - `PongConsumer`: Controls game state and synchronization
 
 ### Game Engine
-- Server-side game logic ensures fair play
+- Server-side game logic
+- Fair matchmaking system
 - Client-side prediction for smooth gameplay
 - State synchronization through WebSocket
 - Collision detection and physics calculations
@@ -105,7 +106,6 @@ The game uses three main WebSocket consumers:
 ### Database Schema
 - User profiles and authentication
 - Conversation and message history
-- Tournament tracking and statistics
 - Blocked users management
 
 ## Security
